@@ -1,17 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SphereSelection : MonoBehaviour
 {
-    
-    
+
+    [SerializeField] private GameObject car_2;
+    [SerializeField] private GameObject car_1;
     [SerializeField] private string selectableTagL = "SelectableL" ;
     [SerializeField] private string selectableTagR = "SelectableR";
     [SerializeField] private TextMeshProUGUI txt;
     private int counter1=0 ;
-    private int counter2=0 ;
+    private int counter2 = 0;
     private Transform _selection;
     private void Update()
     {
@@ -44,7 +48,18 @@ public class SphereSelection : MonoBehaviour
         }
         if (counter1 > 0 && counter2>0)
         {
-            txt.text = "You may now cross the street";
+            Destroy(car_1);
+            Destroy(car_2);
+            txt.text = "You may now cross the street \n next level is now loading";
+            StartCoroutine(DelaySceneLoad());
+           
+
         }
+    }
+
+    IEnumerator DelaySceneLoad()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("scene 2");
     }
 }
