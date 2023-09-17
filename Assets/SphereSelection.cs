@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,7 +23,6 @@ public class SphereSelection : MonoBehaviour
             _selection = null;
         }
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-        //Ray ray = Camera.main.ScreenPointToRay(transform.right + transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {

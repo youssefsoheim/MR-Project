@@ -238,6 +238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tocus
       objectReference: {fileID: 0}
+    - target: {fileID: 1610265466720824, guid: 02e641040fb499c49a848e40f535164a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4013073016293618, guid: 02e641040fb499c49a848e40f535164a, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1434,6 +1438,10 @@ PrefabInstance:
     - target: {fileID: 4849120756351913069, guid: cdf518095837bbd448bc8f02e8e7fc45, type: 3}
       propertyPath: m_Name
       value: Car_Black_List (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849120756351913069, guid: cdf518095837bbd448bc8f02e8e7fc45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5188244688500692695, guid: cdf518095837bbd448bc8f02e8e7fc45, type: 3}
       propertyPath: m_RootOrder

@@ -242,7 +242,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txt: {fileID: 775438794}
   analysis: {fileID: 675012712}
-  image: {fileID: 2800000, guid: 4d85104d683019e459aeb4f73cc264f7, type: 3}
+  clip: {fileID: 8300000, guid: 73212494e847a6b47bf539cfa7257dde, type: 3}
+  cam: {fileID: 1189529083}
   _loopSeconds: 10
   _computerVisionKey: 2fc121cbfe2c4d74a8bcd3726ee16f30
   _computerVisionEndpoint: https://eastus.api.cognitive.microsoft.com/vision/v3.2/analyze?visualFeatures=Tags&language=en&model-version=latest

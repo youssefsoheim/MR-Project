@@ -2,30 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.Windows.WebCam;
 using System.Linq;
 using System;
-using System.IO;
 using UnityEngine.Networking;
-using UnityGoogleDrive;
-using ExitGames.Client.Photon.StructWrapping;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Net.Http;
-using System.Web;
-using System.Threading.Tasks;
-using UnityEngine.SceneManagement;
+
 
 public class hud : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI txt;
     [SerializeField] private TextMeshProUGUI analysis;
-    private System.Threading.Timer _timer;
     PhotoCapture _photoCaptureObject = null;
     IEnumerator coroutine;
-    public Texture2D image;
-
+    public AudioClip clip;
+    public Camera cam;
     [Header("Number of seconds between snapshots")]
     [Range(10, 60)]
     public int _loopSeconds = 5;
@@ -111,10 +101,8 @@ public class hud : MonoBehaviour
     }
     void AnalyzeScene()
     {
-        var content = image.EncodeToJPG();
         analysis.text= "CALCULATION PENDING";
-        GetTagsAndFaces(content);
-        //PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
+        PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
     }
 
 
@@ -185,11 +173,11 @@ public class hud : MonoBehaviour
     }
     IEnumerator DelaySceneLoad()
     {
-        EditorApplication.Beep();
+         Vector3 pos = cam.transform.position;
+        AudioSource.PlayClipAtPoint(clip, pos); 
+            
         yield return new WaitForSeconds(1f);
-        EditorApplication.Beep();
-        yield return new WaitForSeconds(1f);
-        EditorApplication.Beep();
+       
     }
 
 
